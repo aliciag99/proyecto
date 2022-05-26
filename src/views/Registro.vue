@@ -1,6 +1,5 @@
 <template>
-    <div>
-        <div>Vista Registro</div>
+    <div class="general">
         <FormularioRegistro />
     </div>
 </template>

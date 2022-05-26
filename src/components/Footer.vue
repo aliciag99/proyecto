@@ -1,5 +1,9 @@
 <template>
-    <div class="footer" />
+    <div class="footer">
+        <div class="copy">
+            <span class="simbolo">C</span>&nbsp;2022 Reservas Spatia
+        </div>
+    </div>
 </template>
 
 <script>
@@ -9,13 +13,5 @@ export default {
 </script>
 
 <style>
-.footer {
-    background-color: #212529;
-    color: #9b9d9e;
-    width: 100%;
-    height: 50px;
-    font-size: 1rem;
-    position: fixed;
-    bottom: 0;
-}
+@import '../assets/styles.css';
 </style>

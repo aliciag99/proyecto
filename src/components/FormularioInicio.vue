@@ -1,34 +1,40 @@
 <template>
-    <div>
+    <div class="general">
         <form
             action="#"
             method="#"
             @submit.prevent="iniciar"
         >
-            <label for="usuario">Usuario:</label><br>
-            <input
-                id="usuario"
-                v-model="Usuario"
-                type="text"
-                name="usuario"
-                placeholder="Usuario"
-            ><br>
-            <label for="password">Contraseña:</label><br>
-            <input
-                id="password"
-                v-model="Password"
-                type="password"
-                name="password"
-                placeholder="Contraseña"
-            ><br>
-            <input
-                type="submit"
-                value="Iniciar sesión"
-                @click="logearUsuario"
-            >
-            <p @click="registrar">
-                ¿No estás registrado?
-            </p>
+            <div class="caja">
+                <label for="usuario">Usuario</label>
+                <input
+                    id="usuario"
+                    v-model="Usuario"
+                    type="text"
+                    name="usuario"
+                    placeholder="Usuario"
+                    required
+                >
+                <label for="password">Contraseña</label>
+                <input
+                    id="password"
+                    v-model="Password"
+                    type="password"
+                    name="password"
+                    placeholder="Contraseña"
+                    required
+                >
+                <input
+                    type="submit"
+                    value="Iniciar sesión"
+                >
+                <p
+                    class="cursor"
+                    @click="registrar"
+                >
+                    ¿No estás registrado?
+                </p>
+            </div>
         </form>
     </div>
 </template>
@@ -44,24 +50,17 @@ export default {
             Password: ''
         };
     },
-    async created () {
-        this.servicios = await logearUsuario(this.Usuario, this.Password);
-        console.log(this.servicios);
-    },
     methods: {
-        // handleSubmit () {},
-
         registrar () {
             this.$router.push('/registro');
         },
         iniciar () {
-            this.Usuario = '';
-            this.Password = '';
+            logearUsuario(this.Usuario, this.Password, this.$router);
         }
     }
 };
 </script>
 
 <style>
-
+@import '../assets/styles.css';
 </style>

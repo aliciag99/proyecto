@@ -1,16 +1,16 @@
 <template>
     <div class="general">
-        <p>Selecciona los datos para realizar tu reserva</p>
-        <FormularioSeleccion />
+        <p>Selecciona la comunidad y la zona común e indica las modificaciones</p>
+        <FormularioModificarZonaComun />
     </div>
 </template>
 
 <script>
-import FormularioSeleccion from '../components/FormularioSeleccion.vue';
+import FormularioModificarZonaComun from '../components/FormularioModificarZonaComun.vue';
 export default {
-    name: 'Seleccion',
+    name: 'ModificarZonaComun',
     components: {
-        FormularioSeleccion
+        FormularioModificarZonaComun
     }
 };
 </script>
@@ -19,22 +19,27 @@ export default {
 .general {
     flex-direction: column;
     text-align: center;
-    padding: 0 25px;
     margin-top: 0;
+}
+p {
+    padding: 0 15px;
 }
 /**************** Tablets ****************/
 @media only screen and (min-width: 768px) {
     p {
         font-size: 1.5rem;
-        padding: 30px 90px;
+        padding: 10px 110px;
+        line-height: 140%;
+        margin: 20px 0;
     }
 }
 /*************** Escritorio ***************/
 @media only screen and (min-width: 1024px) {
     p {
         margin: 0;
-        font-size: 1.3rem;
-        line-height: 1%;
+        font-size: 1.1rem;
+        line-height: 20%;
+        padding: 16px 30px;
     }
 }
 /************** Pantallas XL **************/
@@ -42,7 +47,8 @@ export default {
     p {
         margin: 1% 0;
         font-size: 1.4rem;
-        line-height: 20%;
+        line-height: 100%;
+        padding: 20px 90px;
     }
 }
 </style>

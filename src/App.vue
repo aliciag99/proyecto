@@ -1,13 +1,5 @@
 <template>
     <div id="app">
-        <div>
-            <!-- <router-link to="/">
-                Home
-            </router-link>
-            <router-link to="/inicio">
-                Inicio
-            </router-link> -->
-        </div>
         <Menu />
         <Footer />
         <keep-alive>
@@ -30,5 +22,11 @@ export default {
 </script>
 
 <style>
-
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f8f8;
+}
 </style>

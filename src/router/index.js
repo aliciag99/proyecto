@@ -6,9 +6,11 @@ import Registro from '../views/Registro.vue';
 import Bienvenida from '../views/Bienvenida.vue';
 import Seleccion from '../views/Seleccion.vue';
 import Asignacion from '../views/Asignacion.vue';
-import Alta from '../views/Alta.vue';
-import Reserva from '../views/Reserva.vue';
+import AltaComunidad from '../views/AltaComunidad.vue';
+import AltaZonaComun from '../views/AltaZonaComun.vue';
 import Confirmacion from '../views/Confirmacion.vue';
+import ModificarComunidad from '../views/ModificarComunidad.vue';
+import ModificarZonaComun from '../views/ModificarZonaComun.vue';
 
 Vue.use(VueRouter);
 
@@ -44,19 +46,29 @@ const routes = [
         component: Asignacion
     },
     {
-        path: '/alta',
-        name: 'Alta',
-        component: Alta
+        path: '/alta_comunidad',
+        name: 'AltaComunidad',
+        component: AltaComunidad
     },
     {
-        path: '/reserva',
-        name: 'Reserva',
-        component: Reserva
+        path: '/alta_zona_comun',
+        name: 'AltaZonaComun',
+        component: AltaZonaComun
     },
     {
         path: '/confirmacion',
         name: 'Confirmacion',
         component: Confirmacion
+    },
+    {
+        path: '/modificar_comunidad',
+        name: 'ModificarComunidad',
+        component: ModificarComunidad
+    },
+    {
+        path: '/modificar_zona_comun',
+        name: 'ModificarZonaComun',
+        component: ModificarZonaComun
     }
 ];
 

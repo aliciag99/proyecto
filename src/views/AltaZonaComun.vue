@@ -1,16 +1,16 @@
 <template>
     <div class="general">
-        <p>Selecciona los datos para realizar tu reserva</p>
-        <FormularioSeleccion />
+        <p>Escribe los datos de la nueva zona común para insertarlos en el sistema</p>
+        <FormularioAltaZonaComun />
     </div>
 </template>
 
 <script>
-import FormularioSeleccion from '../components/FormularioSeleccion.vue';
+import FormularioAltaZonaComun from '../components/FormularioAltaZonaComun.vue';
 export default {
-    name: 'Seleccion',
+    name: 'AltaZonaComun',
     components: {
-        FormularioSeleccion
+        FormularioAltaZonaComun
     }
 };
 </script>
@@ -19,22 +19,26 @@ export default {
 .general {
     flex-direction: column;
     text-align: center;
-    padding: 0 25px;
     margin-top: 0;
+}
+p {
+    padding: 0 30px;
 }
 /**************** Tablets ****************/
 @media only screen and (min-width: 768px) {
     p {
         font-size: 1.5rem;
-        padding: 30px 90px;
+        padding: 20px 110px;
+        line-height: 140%;
     }
 }
 /*************** Escritorio ***************/
 @media only screen and (min-width: 1024px) {
     p {
         margin: 0;
-        font-size: 1.3rem;
-        line-height: 1%;
+        font-size: 1.1rem;
+        line-height: 20%;
+        padding: 20px 90px;
     }
 }
 /************** Pantallas XL **************/
@@ -42,7 +46,8 @@ export default {
     p {
         margin: 1% 0;
         font-size: 1.4rem;
-        line-height: 20%;
+        line-height: 30%;
+        padding: 25px 90px 30px 90px;
     }
 }
 </style>

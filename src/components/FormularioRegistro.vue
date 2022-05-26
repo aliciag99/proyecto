@@ -1,51 +1,59 @@
 <template>
-    <div>
+    <div class="general">
         <form
             action="#"
             method="#"
             @submit.prevent="crear"
         >
-            <label for="nombre">Nombre:</label><br>
-            <input
-                id="nombre"
-                v-model="Nombre"
-                type="text"
-                name="nombre"
-                placeholder="Nombre"
-            ><br>
-            <label for="apellidos">Apellidos:</label><br>
-            <input
-                id="apellidos"
-                v-model="Apellidos"
-                type="text"
-                name="apellidos"
-                placeholder="Apellidos"
-            ><br>
-            <label for="usuario">Usuario:</label><br>
-            <input
-                id="usuario"
-                v-model="Usuario"
-                type="text"
-                name="usuario"
-                placeholder="Usuario"
-            ><br>
-            <label for="password">Contraseña:</label><br>
-            <input
-                id="password"
-                v-model="Password"
-                type="password"
-                name="password"
-                placeholder="Contraseña"
-            ><br>
-            <input
-                type="submit"
-                value="Crear cuenta"
-            >
+            <div class="caja">
+                <label for="nombre">Nombre</label>
+                <input
+                    id="nombre"
+                    v-model="Nombre"
+                    type="text"
+                    name="nombre"
+                    placeholder="Nombre"
+                    required
+                >
+                <label for="apellidos">Apellidos</label>
+                <input
+                    id="apellidos"
+                    v-model="Apellidos"
+                    type="text"
+                    name="apellidos"
+                    placeholder="Apellidos"
+                    required
+                >
+                <label for="usuario">Usuario</label>
+                <input
+                    id="usuario"
+                    v-model="Usuario"
+                    type="text"
+                    name="usuario"
+                    placeholder="Usuario"
+                    required
+                >
+                <label for="password">Contraseña</label>
+                <input
+                    id="password"
+                    v-model="Password"
+                    type="password"
+                    name="password"
+                    placeholder="Contraseña"
+                    required
+                >
+                <input
+                    type="submit"
+                    value="Crear cuenta"
+                >
+            </div>
         </form>
     </div>
 </template>
 
 <script>
+import { registrarUsuario } from '../services/api-services.js';
+
 export default {
     name: 'FormularioRegistro',
     data () {
@@ -58,15 +66,12 @@ export default {
     },
     methods: {
         crear () {
-            this.Nombre = '';
-            this.Apellidos = '';
-            this.Usuario = '';
-            this.Password = '';
+            registrarUsuario(this.Nombre, this.Apellidos, this.Usuario, this.Password, this.$router);
         }
     }
 };
 </script>
 
-<style>
-
+<style scoped>
+@import '../assets/styles.css';
 </style>

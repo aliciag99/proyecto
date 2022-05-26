@@ -1,6 +1,5 @@
 <template>
-    <div>
-        <div>Vista Inicio</div>
+    <div class="general">
         <FormularioInicio />
     </div>
 </template>
